@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madrissa 5 Wqt Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a4d2c">
+</head>
+<body>
+  <div class="watermark">M IJAZ 123NB</div>
+
+  <header>
+    <h1>مدرسہ 5 وقتہ حاضری رجسٹر</h1>
+    <input type="text" id="madrissaName" placeholder="مدرسہ کا نام لکھیں" value="Madrissa Al Quran">
+    <div class="controls">
+      <select id="sectionSelect">
+        <option value="A">SECTION A</option>
+        <option value="B">SECTION B</option>
+        <option value="C">SECTION C</option>
+      </select>
+      <input type="date" id="attendanceDate">
+      <button id="addStudentBtn">+ طالب علم شامل کریں</button>
+    </div>
+  </header>
+
+  <main>
+    <table id="attendanceTable">
+      <thead>
+        <tr>
+          <th>Roll No.</th>
+          <th>طالب علم کا نام</th>
+          <th>والد کا نام</th>
+          <th>فجر</th>
+          <th>ظہر</th>
+          <th>عصر</th>
+          <th>مغرب</th>
+          <th>عشاء</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody id="studentList"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <button id="saveBtn">💾 Save</button>
+    <button id="downloadBtn">📥 Download Excel</button>
+    <button id="shareBtn">📤 Share</button>
+  </footer>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>نیا طالب علم</h2>
+      <input type="number" id="rollNo" placeholder="Roll No">
+      <input type="text" id="studentName" placeholder="طالب علم کا نام">
+      <input type="text" id="fatherName" placeholder="والد کا نام">
+      <button id="saveStudentBtn">Save Student</button>
+      <button id="closeModalBtn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
